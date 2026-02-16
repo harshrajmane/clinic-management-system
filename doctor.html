@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>Clinic Management System</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<div class="main">
+<div class="container">
+
+<h2>Doctor Panel</h2>
+
+<h3>Waiting Queue</h3>
+<div id="tokenList"></div>
+
+<hr>
+
+<h3>Add Prescription</h3>
+
+<input type="text" id="patientId" placeholder="Patient ID">
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<button onclick="addPrescription()">Save Prescription</button>
+
+</div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

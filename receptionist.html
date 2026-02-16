@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receptionist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>Clinic Management System</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<div class="main">
+<div class="container">
+
+<h2>Receptionist Panel</h2>
+
+<h3>Add Patient</h3>
+
+<input type="text" id="name" placeholder="Name">
+<input type="number" id="age" placeholder="Age">
+<input type="text" id="gender" placeholder="Gender">
+<input type="text" id="phone" placeholder="Phone">
+<input type="text" id="address" placeholder="Address">
+
+<button onclick="addPatient()">Add Patient</button>
+
+<hr>
+
+<h3>Create Bill</h3>
+
+<input type="text" id="patientIdBill" placeholder="Patient ID">
+<input type="number" id="amount" placeholder="Amount">
+<input type="text" id="description" placeholder="Description">
+
+<button onclick="createBill()">Create Bill</button>
+
+</div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
