@@ -166,13 +166,8 @@ The application was tested for:
 
 ## 🌐 Live Demo
 
-👉 https://clinic-management-system.vercel.app
-
----
-
-## 📂 GitHub Repository
-
 👉 https://clinic-management-system-byharsh.vercel.app/
+
 ---
 
 ## 📜 License
