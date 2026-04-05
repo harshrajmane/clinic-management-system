@@ -33,26 +33,44 @@ onAuthStateChanged(auth, user => {
 
 
 // ================= REGISTER =================
+import { setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
 window.register = async function(){
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const role = document.getElementById("role").value;
 
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
+    try {
 
-    await setDoc(doc(db, "users", user.uid), {
-        email,
-        role
-    });
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
 
-    console.log("User registered:", email, role);
+        await setDoc(doc(db, "users", user.uid), {
+            email,
+            role
+        });
 
-    alert("Registration successful!");
-    window.location.href = "index.html";
+        console.log("User registered:", email, role);
+
+        alert("Registration successful!");
+        window.location.href = "index.html";
+
+    } catch(error) {
+
+        console.error(error);
+
+        if(error.code === "auth/email-already-in-use"){
+            alert("Email already registered. Please login.");
+        }
+        else if(error.code === "permission-denied"){
+            alert("Database permission issue. Check Firebase rules.");
+        }
+        else{
+            alert(error.message);
+        }
+    }
 }
-
 
 // ================= LOGIN =================
 window.login = async function(){
